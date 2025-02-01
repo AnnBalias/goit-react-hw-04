@@ -1,26 +1,25 @@
+import { useEffect, useState } from 'react';
 // import components
-import Profile from './components/Profile/Profile';
-import FriendList from './components/FriendList/FriendList';
-import TransactionHistory from './components/TransactionHistory/TransactionHistory';
-// import json
-import userData from "./userData.json";
-import friends from "./friends.json";
-import transactions from "./transactions.json";
+import SearchBar from './components/SearchBar/SearchBar';
+import ErrorMessage from './components/ErrorMessage/ErrorMessage';
+import ImageGallery from './components/ImageGallery/ImageGallery';
+import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
+import Loader from './components/Loader/Loader';
+import ImageModal from './components/ImageModal/ImageModal';
+
 // import styles
 import './App.css'
 
 const App = () => {
+
+
   return (
     <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList friends={ friends } />
-      <TransactionHistory items={transactions} />
+      <SearchBar  />
+      {false ? <ErrorMessage /> : <ImageGallery arr={[]} />}
+      <LoadMoreBtn  />
+      {false && <Loader />}
+      <ImageModal />
     </>
   );
 };
