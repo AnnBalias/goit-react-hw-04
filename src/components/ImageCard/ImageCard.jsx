@@ -1,10 +1,15 @@
 import css from "./ImageCard.module.css"
 
-const ImageCard = () => {
+const ImageCard = ({img}) => {
     return (
-    <p className={css.profCont}>
-        ImageCard
-    </p>)
+        <div className={css.profCont}>
+            <img
+                className={css}
+                src={img.urls.small}
+                alt={img.alt_description}
+            />
+        </div>
+    )
 }
 
 export default ImageCard;

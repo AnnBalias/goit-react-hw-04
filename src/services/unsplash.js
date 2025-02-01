@@ -1,18 +1,12 @@
 import axios from "axios";
 
-const API_KEY = "47396593-fa81edaacd7e53da3770e0abc";
+const API_KEY = `RzRF_k3h3BHq7AA1GQviSXEOi7T7iYwqCSZySegP0Vw`;
+const API_LINK = `https://api.unsplash.com/search/photos?`;
 
-export async function getImages(search, page) {
-  const { data } = await axios(`https://pixabay.com/api/?`, {
-    params: {
-      key: API_KEY,
-      q: search,
-      image_type: "photo",
-      orientation: "horizontal",
-      safesearch: true,
-      per_page: 15,
-      page: page,
-    },
-  });
-  return data;
-}
+export const fetchImages = async (search, page) => {
+  const response = await axios.get(
+    `${API_LINK}client_id=${API_KEY}&query=${search}&page=${page}&per_page=16`
+  );
+
+  return response.data.results;
+};

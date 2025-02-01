@@ -1,13 +1,14 @@
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css"
 
-const ImageGallery = ({arr}) => {
+const ImageGallery = ({ imgs, handModal }) => {
+    
     return (
         <ul>
-            { !arr ? "No images" : arr.map((item) => {
+            {imgs.length > 0 && imgs.map((img) => {
                 return (
-                    <li key={"item"}>
-		                <ImageCard/>
+                    <li key={img.id} onClick={() => handModal(img)}>
+                        <ImageCard img={img} />
 	                </li>
                 )
             })}

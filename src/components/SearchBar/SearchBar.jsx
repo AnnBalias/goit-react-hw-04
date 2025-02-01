@@ -1,14 +1,28 @@
 import { IconContext } from 'react-icons';
 import { IoIosSearch } from "react-icons/io";
-import css from "./SearchBar.module.css"
+import { toast } from "react-hot-toast";
+import css from "./SearchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({ hendSub }) => {
+
+    const onSub = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const search = form.elements.search.value.trim();
+        if (search === "") {
+            toast.error("Input field is empty!");
+            return;
+        }
+        hendSub(search);
+    }
+
     return (
         <header className={css.header}>
-            <form className={css.headerForm}>
+            <form onSubmit={onSub} className={css.headerForm}>
                 <input
                     className={css.formInp}
                     type="text"
+                    name="search"
                     autoComplete="off"
                     autoFocus
                     placeholder="Search images and photos"
