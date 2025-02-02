@@ -3,7 +3,7 @@ import { IoIosSearch } from "react-icons/io";
 import { toast } from "react-hot-toast";
 import css from "./SearchBar.module.css";
 
-const SearchBar = ({ hendSub }) => {
+const SearchBar = ({ handSub }) => {
 
     const onSub = (e) => {
         e.preventDefault();
@@ -13,7 +13,7 @@ const SearchBar = ({ hendSub }) => {
             toast.error("Input field is empty!");
             return;
         }
-        hendSub(search);
+        handSub(search);
     }
 
     return (

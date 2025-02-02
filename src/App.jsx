@@ -47,7 +47,7 @@ const App = () => {
     getImgs();
   }, [search, page]);
 
-  const hendSub = (searchInp) => {
+  const handSub = (searchInp) => {
     setSearch(searchInp);
     setPage(1);
     setImgs([]);
@@ -69,7 +69,7 @@ const App = () => {
 
   return (
     <>
-      <SearchBar hendSub={hendSub} />
+      <SearchBar handSub={handSub} />
       {error ? <ErrorMessage /> : <ImageGallery imgs={imgs} handModal={handModal} />}
       {imgs.length > 0 && !error && <LoadMoreBtn loadMore={loadMore} />}
       {load && <Loader />}
