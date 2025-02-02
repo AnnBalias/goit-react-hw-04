@@ -2,9 +2,9 @@ import css from "./ImageCard.module.css"
 
 const ImageCard = ({img}) => {
     return (
-        <div className={css.profCont}>
+        <div className={css.imgBox}>
             <img
-                className={css}
+                className={css.img}
                 src={img.urls.small}
                 alt={img.alt_description}
             />

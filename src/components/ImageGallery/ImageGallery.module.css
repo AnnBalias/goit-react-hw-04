@@ -1,28 +1,19 @@
-.FriendItem {
+.galleryList {
+    width: 1440px;
+    padding: 12px 8px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.galleryitem {
+    display: flex;
     align-items: center;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    padding: 8px;
-}
-
-.FriendImg {
-    margin-bottom: 12px;
-}
-
-.FriendName {
-    margin-bottom: 4px;
-}
-
-.FriendStatus {
-    font-size: 12px;
-}
-
-.FriendOnline {
-    color: green;
-}
-
-.FriendOffline {
-    color: red;
+    justify-content: center;
+    width: ((100% - 16px) / 3);
+    height: 275px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }

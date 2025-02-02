@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
-import Modal from 'react-modal';
 // import components
 import SearchBar from './components/SearchBar/SearchBar';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
@@ -81,6 +80,3 @@ const App = () => {
 };
 
 export default App;
-
-
-// пусте поле має виавати помилку
